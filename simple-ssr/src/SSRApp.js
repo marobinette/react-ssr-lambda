@@ -1,12 +1,14 @@
-// Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
-// SPDX-License-Identifier: MIT-0
-
-import React from "react";
+import React, { useState } from "react";
 
 const SSRApp = ({ data }) => {
+  const [result, setResult] = useState(data);
+  if (!result) {
+    setResult('Howdy ho neigbor');
+  }
   return (
     <div>
       <p>Hello from SSRApp</p>
+      <p>{result}</p>
     </div>
   );
 };
