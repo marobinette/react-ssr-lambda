@@ -12,7 +12,7 @@ It usues AWS CDK to make the deployment.
 ## Folder structure
 
 - /cdk - code to deploy the solution
-- /simple-ssr - React application created with the create-react-app tool.
+- /simple-ssr - React application created with the react, react-dom, babel, and webpack
 
 
 ## Deployment
@@ -31,7 +31,7 @@ It usues AWS CDK to make the deployment.
 
     `npm install`
 
-    `npm run build-all`
+    `npm run build-server`
 
     `cd ../cdk`
 
