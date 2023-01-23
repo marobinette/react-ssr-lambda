@@ -4,8 +4,6 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
 import SSRApp from "../SSRApp";
-import config from "../config.json";
-import axios from "axios";
 
 const indexFile = `
 <!DOCTYPE html>
@@ -29,9 +27,8 @@ const indexFile = `
 
 const handler = async function (event) {
   try {
-    const url = config.SSRApiStack.apiurl;
-    const result = await axios.get(url);
-    const app = ReactDOMServer.renderToString(<SSRApp data={result.data} />);
+    const result = ReactDOMServer.renderToString('Hello from cdk');
+    const app = ReactDOMServer.renderToString(<SSRApp data={result} />);
     const html = indexFile.replace(
       '<div id="root"></div>',
       `<div id="root">${app}</div>`
